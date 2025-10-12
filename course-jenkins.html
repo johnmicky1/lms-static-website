@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenkins Course - DevOps LMS</title>
+    <link rel="stylesheet" href="css-style.css">
+    <link rel="stylesheet" href="css-dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>🚀 DevOps LMS</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="login.html" class="login-btn" id="auth-button">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="course-container">
+        <div class="course-header">
+            <h1>⚙️ Introduction to Jenkins</h1>
+            <p>Learn CI/CD automation with Jenkins pipelines</p>
+            <div class="course-stats">
+                <span>10 Lessons • 5 Hours • Intermediate</span>
+            </div>
+        </div>
+
+        <div class="course-content">
+            <div class="modules">
+                <div class="module">
+                    <h3>Section 1: Jenkins Fundamentals</h3>
+                    <div class="lessons">
+                        <div class="lesson completed">
+                            <span class="lesson-icon">✓</span>
+                            <div class="lesson-content">
+                                <h4>1. CI/CD Concepts</h4>
+                                <p>Understanding Continuous Integration and Deployment</p>
+                                <span class="lesson-duration">20 min</span>
+                            </div>
+                        </div>
+                        <div class="lesson completed">
+                            <span class="lesson-icon">✓</span>
+                            <div class="lesson-content">
+                                <h4>2. Jenkins Installation</h4>
+                                <p>Setting up Jenkins on your system</p>
+                                <span class="lesson-duration">30 min</span>
+                            </div>
+                        </div>
+                        <div class="lesson current">
+                            <span class="lesson-icon">▶</span>
+                            <div class="lesson-content">
+                                <h4>3. Your First Pipeline</h4>
+                                <p>Creating and running your first Jenkins pipeline</p>
+                                <span class="lesson-duration">25 min</span>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span class="lesson-icon">○</span>
+                            <div class="lesson-content">
+                                <h4>4. Pipeline as Code</h4>
+                                <p>Writing Jenkinsfiles for pipeline configuration</p>
+                                <span class="lesson-duration">35 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module">
+                    <h3>Section 2: Advanced Jenkins Features</h3>
+                    <div class="lessons">
+                        <div class="lesson">
+                            <span class="lesson-icon">○</span>
+                            <div class="lesson-content">
+                                <h4>5. Integrating with GitHub</h4>
+                                <p>Connecting Jenkins with GitHub repositories</p>
+                                <span class="lesson-duration">30 min</span>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span class="lesson-icon">○</span>
+                            <div class="lesson-content">
+                                <h4>6. Build Triggers & Webhooks</h4>
+                                <p>Automating builds with triggers and webhooks</p>
+                                <span class="lesson-duration">25 min</span>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span class="lesson-icon">○</span>
+                            <div class="lesson-content">
+                                <h4>7. Docker Integration</h4>
+                                <p>Using Docker containers in Jenkins pipelines</p>
+                                <span class="lesson-duration">40 min</span>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span class="lesson-icon">○</span>
+                            <div class="lesson-content">
+                                <h4>8. Testing & Quality Gates</h4>
+                                <p>Implementing testing and quality checks</p>
+                                <span class="lesson-duration">35 min</span>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span class="lesson-icon">○</span>
+                            <div class="lesson-content">
+                                <h4>9. Deployment Strategies</h4>
+                                <p>Blue-green and canary deployments</p>
+                                <span class="lesson-duration">30 min</span>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span class="lesson-icon">○</span>
+                            <div class="lesson-content">
+                                <h4>10. Monitoring & Best Practices</h4>
+                                <p>Monitoring pipelines and Jenkins best practices</p>
+                                <span class="lesson-duration">25 min</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="current-lesson">
+                <h2>Current Lesson: Your First Pipeline</h2>
+                <div class="lesson-video">
+                    <div class="video-placeholder">
+                        <div class="play-button">▶</div>
+                        <p>Video: Jenkins Pipeline Tutorial</p>
+                    </div>
+                </div>
+                <div class="lesson-content">
+                    <h3>Creating a Simple Pipeline</h3>
+                    <p>Learn how to create your first Jenkins pipeline:</p>
+                    
+                    <div class="code-block">
+                        <pre><code>pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                    
+                    <h3>Exercise: Create Your Pipeline</h3>
+                    <ol>
+                        <li>Open Jenkins in your browser</li>
+                        <li>Click "New Item"</li>
+                        <li>Enter a name and select "Pipeline"</li>
+                        <li>Copy the pipeline code above</li>
+                        <li>Save and run the pipeline</li>
+                        <li>Observe the build stages</li>
+                    </ol>
+                    
+                    <button class="btn btn-primary" onclick="markJenkinsLessonComplete()">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js-app.js"></script>
+    <script>
+        function markJenkinsLessonComplete() {
+            const user = JSON.parse(localStorage.getItem('lms_user'));
+            if (user) {
+                user.progress = user.progress || {};
+                user.progress['jenkins-lesson-3'] = true;
+                localStorage.setItem('lms_user', JSON.stringify(user));
+                alert('Lesson marked as complete!');
+                window.location.href = 'course-jenkins.html';
+            } else {
+                alert('Please login to track your progress');
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 (John Michael Oliba) DevOps LMS. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

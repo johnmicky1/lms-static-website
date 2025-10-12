@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DevOps LMS</title>
+    <link rel="stylesheet" href="css-style.css">
+    <link rel="stylesheet" href="css-dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🚀</span>
+                <span class="logo-text">DevOps LMS</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+                <li><a href="#" class="nav-link login-btn" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Welcome back, <span id="user-name">Student</span>! 👋</h1>
+            <p>Continue your learning journey</p>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-info">
+                    <h3>Enrolled Courses</h3>
+                    <span id="enrolled-courses">2</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <h3>Completed Lessons</h3>
+                    <span id="completed-lessons">4</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-info">
+                    <h3>Learning Time</h3>
+                    <span id="learning-time">2.5 hours</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="current-courses">
+            <h2>Your Courses</h2>
+            <div class="course-progress-grid">
+                <div class="progress-card" onclick="window.location.href='course-github.html'">
+                    <div class="course-header">
+                        <div class="course-icon">🐙</div>
+                        <h3>Complete GitHub Mastery</h3>
+                    </div>
+                    <div class="progress-info">
+                        <div class="progress-bar">
+                            <div class="progress" id="github-progress" style="width: 25%"></div>
+                        </div>
+                        <span>25% Complete</span>
+                    </div>
+                    <a href="course-github.html" class="btn btn-outline">Continue Learning</a>
+                </div>
+
+                <div class="progress-card" onclick="window.location.href='course-jenkins.html'">
+                    <div class="course-header">
+                        <div class="course-icon">⚙️</div>
+                        <h3>Jenkins CI/CD Pipeline</h3>
+                    </div>
+                    <div class="progress-info">
+                        <div class="progress-bar">
+                            <div class="progress" id="jenkins-progress" style="width: 10%"></div>
+                        </div>
+                        <span>10% Complete</span>
+                    </div>
+                    <a href="course-jenkins.html" class="btn btn-outline">Continue Learning</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-activity">
+            <h2>Recent Activity</h2>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon">✅</div>
+                    <div class="activity-content">
+                        <p>Completed <strong>Git vs GitHub</strong> lesson</p>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">✅</div>
+                    <div class="activity-content">
+                        <p>Completed <strong>CI/CD Concepts</strong> lesson</p>
+                        <span class="activity-time">1 day ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon">🎯</div>
+                    <div class="activity-content">
+                        <p>Started <strong>Jenkins Installation</strong> lesson</p>
+                        <span class="activity-time">2 days ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <span class="logo-icon">🚀</span>
+                        <span class="logo-text">DevOps LMS</span>
+                    </div>
+                    <p>Master modern development tools and practices with industry-expert courses.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="course-github.html">GitHub Course</a></li>
+                        <li><a href="course-jenkins.html">Jenkins Course</a></li>
+                        <li><a href="courses.html">All Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 (John Michael Oliba) DevOps LMS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function loadDashboard() {
+            const user = JSON.parse(localStorage.getItem('lms_user'));
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            document.getElementById('user-name').textContent = user.fullname || 'Student';
+            
+            // Calculate progress
+            const progress = user.progress || {};
+            const githubLessons = Object.keys(progress).filter(key => key.startsWith('github-')).length;
+            const jenkinsLessons = Object.keys(progress).filter(key => key.startsWith('jenkins-')).length;
+            
+            document.getElementById('github-progress').style.width = `${(githubLessons / 8) * 100}%`;
+            document.getElementById('jenkins-progress').style.width = `${(jenkinsLessons / 10) * 100}%`;
+            document.getElementById('completed-lessons').textContent = githubLessons + jenkinsLessons;
+        }
+
+        function logout() {
+            localStorage.removeItem('lms_user');
+            window.location.href = 'index.html';
+        }
+
+        // Load dashboard when page loads
+        document.addEventListener('DOMContentLoaded', loadDashboard);
+    </script>
+</body>
+</html>

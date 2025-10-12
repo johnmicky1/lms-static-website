@@ -1,0 +1,17 @@
+devops-lms/
+├── index.html
+├── login.html
+├── register.html
+├── dashboard.html
+├── courses.html
+├── course-github.html
+├── course-jenkins.html
+├── css/
+│   ├── style.css
+│   ├── auth.css
+│   └── dashboard.css
+├── js/
+│   ├── app.js
+│   └── auth.js
+└── assets/
+    └── (images, icons, etc.)
